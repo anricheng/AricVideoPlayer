@@ -1,4 +1,4 @@
-package chou.aric.com.aricvideoplayer.dagger;
+package chou.aric.com.aricvideoplayer.dependencies.modules;
 
 import android.content.Context;
 
@@ -9,8 +9,12 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
-import chou.aric.com.aricvideoplayer.Utils.Constants;
-import chou.aric.com.aricvideoplayer.network.GithubNetwork;
+import javax.inject.Named;
+
+import chou.aric.com.aricvideoplayer.R;
+import chou.aric.com.aricvideoplayer.dependencies.scopes.AppScope;
+import chou.aric.com.aricvideoplayer.http.GithubApi;
+import chou.aric.com.aricvideoplayer.utils.Constants;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
@@ -42,21 +46,47 @@ public class NetWorkModule {
                 .build();
     }
 
+    @Named("URL1")
     @AppScope
     @Provides
-    public Retrofit provideRetrofit(OkHttpClient okHttpClient, Gson gson){
+    public Retrofit provideURL1Retrofit(OkHttpClient okHttpClient, Gson gson,Context context){
         return  new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://api.github.com/")
+                .baseUrl(context.getResources().getString(R.string.base_url1))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
 
+
+    @Named("URL2")
     @AppScope
     @Provides
-    public GithubNetwork provideGithubNewWork(Retrofit retrofit){
-        return  retrofit.create(GithubNetwork.class);
+    public Retrofit provideURL2Retrofit(OkHttpClient okHttpClient, Gson gson,Context context){
+        return  new Retrofit.Builder()
+                .client(okHttpClient)
+                .baseUrl(context.getResources().getString(R.string.base_url2))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+    }
+
+
+    @AppScope
+    @Provides
+    public GithubApi provideGithubApi(OkHttpClient okHttpClient, Gson gson,Context context){
+        return  new Retrofit.Builder()
+                .client(okHttpClient)
+                .baseUrl(context.getResources().getString(R.string.base_url2))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build().create(GithubApi.class);
+    }
+
+    @AppScope
+    @Provides
+    public GithubApi provideGithubNewWork(Retrofit retrofit){
+        return  retrofit.create(GithubApi.class);
     }
 
 
@@ -67,9 +97,6 @@ public class NetWorkModule {
                 .downloader(new OkHttp3Downloader(okHttpClient))
                 .build();
     }
-
-
-
 
 
 }

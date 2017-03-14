@@ -1,4 +1,4 @@
-package chou.aric.com.aricvideoplayer.Utils;
+package chou.aric.com.aricvideoplayer.utils;
 
 /**
  * Created by aric on 2017/3/4.

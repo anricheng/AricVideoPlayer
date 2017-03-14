@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AricVideoPlayer</string>
+
+    <string name="base_url1">www.baidu.com</string>
+    <string name="base_url2">www.baidu.com</string>
+
+    <string name="hello_world">crabsdk-android-demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="crashbtn1text">Crash:数组越界</string>
+    <string name="crashbtn2text">制造一个Block</string>
+    <string name="anrbtntext">制造一个Anr</string>
+    <string name="exbtntext">制造一个Exception</string>
 </resources>

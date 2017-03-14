@@ -5,14 +5,19 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="chou.aric.com.aricvideoplayer.MainActivity">
+    tools:context="chou.aric.com.aricvideoplayer.activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:text="Crab页面"
+        android:onClick="crab"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+       android:layout_below="@+id/tv_title"
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+     />
 </RelativeLayout>

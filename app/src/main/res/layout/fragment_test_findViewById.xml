@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lv_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="chou.aric.com.aricvideoplayer.activities.MainActivity">
+
+    <TextView
+        android:id="@+id/fl_title"
+        android:layout_width="match_parent"
+        android:text="it's a test!"
+        android:layout_height="50dp" />
+
+    <ImageView
+        android:id="@+id/fl_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="click"
+       android:id="@+id/bt_click"
+        android:layout_height="wrap_content" />
+
+
+
+    <ListView
+        android:fastScrollEnabled="false"
+        android:divider="@null"
+        android:id="@+id/lv_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
