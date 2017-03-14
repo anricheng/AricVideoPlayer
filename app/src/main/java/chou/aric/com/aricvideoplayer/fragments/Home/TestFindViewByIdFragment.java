@@ -36,7 +36,7 @@ public class TestFindViewByIdFragment extends BaseFragment implements View.OnCli
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view = View.inflate(getActivity(), R.layout.fragment_test_findViewById, null);
+        view = View.inflate(getActivity(), R.layout.fragment_test_findviewbyid, null);
     }
 
     @Nullable
